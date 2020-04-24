@@ -21,7 +21,7 @@ disk_total = psutil.disk_usage(disk_mount).total / 1073741824
 title = ['Index', 'Os', 'CPU', 'cpu 갯수', '메모리 용량', 'Disk', 'Disk type', 'Disk 용량', 'Disk 권한', 'Disk 마운트 위치']
 
 if __name__ == "__main__":
-    my_file = Path('./Pc_SPEC.xlsx')
+    my_file = Path('Pc_SPEC.xlsx')
     list = [index, os, cpu, cpu_num, process, disk, disk_type, disk_total, disk_auth, disk_mount]
     if my_file.is_file():
         wb = openpyxl.load_workbook(my_file)
@@ -34,5 +34,5 @@ if __name__ == "__main__":
         sheet.append(title)
         sheet.append(list)
 
-    wb.save('./Pc_SPEC.xlsx')
+    wb.save('Pc_SPEC.xlsx')
     wb.close()
